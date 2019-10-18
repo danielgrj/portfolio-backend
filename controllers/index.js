@@ -17,10 +17,10 @@ exports.sendMail = async (req, res) => {
 
     await transport.sendMail({
       from: `"Profile page" <${process.env.EMAIL}`,
-      to: process.env.EMAIL,
+      to: process.env.N_EMAIL,
       subject: 'A new request was made',
       text,
-      html: `<h1>${name}</h1>
+      html: `<h1>${name}, sent you a request</h1>
       <p>${text}</p>
       <p>Reply as soon as possible, perro</p>
       ${to}

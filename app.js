@@ -19,6 +19,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use('/api', routes);
 
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, '/public/index.html'));
+});
+
 app.listen(process.env.PORT, () => {
   console.log(`Server is up on http://localhost:${process.env.PORT}`);
 });
